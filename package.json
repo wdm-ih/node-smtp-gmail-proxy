@@ -5,9 +5,10 @@
   "license": "ISC",
   "author": "",
   "type": "commonjs",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "build": "npx esbuild index.js --bundle --platform=node --outfile=dist/smtp-proxy.js",
+    "start": "tsc && node dist/index.js",
+    "build": "tsc && npx esbuild dist/index.js --bundle --platform=node --outfile=build/smtp-proxy.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -15,5 +16,10 @@
     "google-auth-library": "^9.15.1",
     "smtp-server": "^3.13.6",
     "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "@types/smtp-server": "^3.5.10",
+    "typescript": "^5.8.3"
   }
 }
