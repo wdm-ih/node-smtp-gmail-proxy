@@ -7,8 +7,10 @@
   "type": "commonjs",
   "main": "dist/index.js",
   "scripts": {
-    "start": "tsc && node dist/index.js",
-    "build": "tsc && npx esbuild dist/index.js --bundle --platform=node --outfile=build/smtp-proxy.js",
+    "dev": "tsc --watch",
+    "build:start": "tsc && node dist/index.js",
+    "build:bundle": "tsc && npx esbuild dist/index.js --bundle --platform=node --outfile=build/smtp-proxy.js",
+    "bundle:start": "$npm_execpath run build:bundle && node build/smtp-proxy.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
